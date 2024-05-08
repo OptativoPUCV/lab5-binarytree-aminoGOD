@@ -190,7 +190,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    if (tree == NULL || key == NULL) return NULL;
+    /*if (tree == NULL || key == NULL) return NULL;
 
     TreeNode * currentNode = tree->root;
     TreeNode * upperBoundNodo = NULL;
@@ -198,7 +198,7 @@ Pair * upperBound(TreeMap * tree, void* key) {
         if (is_equal(tree, key, currentNode->pair->key)){
             tree->current = currentNode;
         }
-    }
+    }*/
     return NULL;
 }
 

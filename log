@@ -73,3 +73,9 @@ treemap.c:196:16: error: unused variable ‘upperBoundNodo’ [-Werror=unused-va
 cc1: all warnings being treated as errors
 Compilation failed
 5796887
+Wed 08 May 2024 08:06:26 PM UTC: 
+ treemap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  17|4
+total_score: 30/70
+f4f07f3

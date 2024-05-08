@@ -62,3 +62,14 @@ Wed 08 May 2024 07:43:57 PM UTC:
  tests:  17|4
 total_score: 30/70
 8dde1d1
+Wed 08 May 2024 08:06:10 PM UTC: 
+ treemap.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+In file included from test.c:4:
+treemap.c: In function ‘upperBound’:
+treemap.c:196:16: error: unused variable ‘upperBoundNodo’ [-Werror=unused-variable]
+  196 |     TreeNode * upperBoundNodo = NULL;
+      |                ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+5796887

@@ -50,7 +50,6 @@ TreeMap * createTreeMap(int (*lower_than) (void* key1, void* key2)) {
 
 
 void insertTreeMap(TreeMap * tree, void* key, void * value) {
-    // Verificar si el árbol y la clave no son nulos
     if (tree == NULL || key == NULL) {
         return;
     }
@@ -93,8 +92,9 @@ void insertTreeMap(TreeMap * tree, void* key, void * value) {
 
 
 TreeNode * minimum(TreeNode * x){
-
-    return NULL;
+    if(x == NULL) return NULL;
+    while(x->left != NULL) x = x->left;
+    return x;
 }
 
 

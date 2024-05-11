@@ -197,10 +197,19 @@ Pair * upperBound(TreeMap * tree, void* key) {
     while (currentNode != NULL){
         if (is_equal(tree, key, currentNode->pair->key)){
             tree->current = currentNode;
+            return currentNode->pair;
+        } else if(tree->lower_than(key, currentNode->pair->key)){
+            upperBoundNodo = currentNode;
+            currentNode = currentNode->left;
         }
-    }*/
-    return NULL;
-}
+    }
+    if(upperBoundNodo != NULL){
+        tree->current = upperBoundNodo;
+        return upperBoundNodo->pair;
+    } else {*/
+        return NULL;
+    }
+//}
 
 Pair * firstTreeMap(TreeMap * tree) {
     return NULL;

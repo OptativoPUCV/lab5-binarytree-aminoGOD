@@ -190,7 +190,7 @@ Pair * searchTreeMap(TreeMap * tree, void* key) {
 
 
 Pair * upperBound(TreeMap * tree, void* key) {
-    /*if (tree == NULL || key == NULL) return NULL;
+    if (tree == NULL || key == NULL) return NULL;
 
     TreeNode * currentNode = tree->root;
     TreeNode * upperBoundNodo = NULL;
@@ -201,22 +201,54 @@ Pair * upperBound(TreeMap * tree, void* key) {
         } else if(tree->lower_than(key, currentNode->pair->key)){
             upperBoundNodo = currentNode;
             currentNode = currentNode->left;
+        } else {
+            currentNode = currentNode->right; 
         }
     }
     if(upperBoundNodo != NULL){
         tree->current = upperBoundNodo;
         return upperBoundNodo->pair;
-    } else {*/
+    } else {
         return NULL;
     }
-//}
+}
+
 
 Pair * firstTreeMap(TreeMap * tree) {
-    return NULL;
+    if (tree == NULL || tree->root == NULL) return NULL;
+
+    TreeNode * currentNode = tree->root;
+    while (currentNode->left != NULL){
+        currentNode = currentNode->left;
+    }
+    tree->current = currentNode;
+    return currentNode->pair;
 }
 
 Pair * nextTreeMap(TreeMap * tree) {
-    
-    
-    return NULL;
+    if (tree == NULL || tree->current == NULL) {
+        return NULL;
+    }
+
+    TreeNode * current_node = tree->current;
+
+    if (current_node->right != NULL) {
+        TreeNode * successor = minimum(current_node->right);
+        tree->current = successor;
+        return successor->pair;
+    }
+
+
+    TreeNode * parent = current_node->parent;
+    while (parent != NULL && current_node == parent->right) {
+        current_node = parent;
+        parent = parent->parent;
+    }
+
+    tree->current = parent;
+    if (parent != NULL) {
+        return parent->pair;
+    } else {
+        return NULL;
+    }
 }
